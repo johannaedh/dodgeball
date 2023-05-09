@@ -23,7 +23,7 @@
             {% if current_user.is_authenticated %}
                 <li><a href="/dodgeball/">Logout</a></li>
             {% else %}
-                <li class="/dodgeball/login"><a href="{{ url_for('login', next=request.path) }}">Login</a></li>
+                <li><a href="/dodgeball/login">Login</a></li>
             {% endif %}
         </ul>
     </nav>
