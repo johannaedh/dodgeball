@@ -33,13 +33,7 @@
         <form id="upload-form" enctype="multipart/form-data">
             <h2>Upload Images for Calibration</h2>
             <p>Upload one image from each perspective, both containing a clear view of the calibration ball. Ensure that the whole ball is seen in the image and is not obstructed.</p>
-            {% for id in ['image1', 'image2'] %}
-            <div class="form-group">
-                <label for="{{ id }}">{% if id == 'image1' %}Side{% else %}Bottom{% endif %} Camera:</label>
-                <input type="file" name="{{ id }}" accept="image/png, image/jpeg, image/gif" required>
-                <small class="form-text text-muted" style="font-size: 10px;">(Accepted formats: .png, .jpeg, .gif)</small>
-            </div>
-            {% endfor %}
+           
             <button type="submit">Upload Images</button>
         </form>
         <form id="click-form" class="hidden">
