@@ -6,34 +6,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/dodgeball/static/css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
 </head>
 <body>
     <div class="background-image"></div>
     <div id="flash-messages">
-        {% with messages = get_flashed_messages(with_categories=True) %}
-            {% if messages %}
-                {% for category, message in messages %}
-                    <div class="alert {% if category == 'success' %}alert-success{% else %}alert-error{% endif %}" role="alert">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
+        
     </div>      
     <nav>
         <a href="#" class="website-name">Dodgeball Throw Analyzer</a>
         <ul>
-            <li class="{{ 'active' if request.endpoint == 'home' }}"><a href="/">Home</a></li>
-            <li class="{{ 'active' if request.endpoint == 'my_page' }}"><a href="/my-page">My Page</a></li>
-            <li class="{{ 'active' if request.endpoint == 'calibration' }}"><a href="/calibration">Calibration</a></li>
-            <li class="{{ 'active' if request.endpoint == 'measure' }}"><a href="/measure">Measure Throw</a></li>
-            <li class="{{ 'active' if request.endpoint == 'how_it_works' }}"><a href="/how-it-works">How does it work?</a></li>
+            <li class="{{ 'active' if request.endpoint == 'home' }}"><a href="/dodgeball/">Home</a></li>
+            <li class="{{ 'active' if request.endpoint == 'my_page' }}"><a href="/dodgeball/my_page">My Page</a></li>
+            <li class="{{ 'active' if request.endpoint == 'calibration' }}"><a href="/dodgeball/calibration">Calibration</a></li>
+            <li class="{{ 'active' if request.endpoint == 'measure' }}"><a href="/dodgeball/measure">Measure Throw</a></li>
+            <li class="{{ 'active' if request.endpoint == 'how_it_works' }}"><a href="/dodgeball/how_it_works">How does it work?</a></li>
             {% if current_user.is_authenticated %}
-                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                <li><a href="/dodgeball/">Logout</a></li>
             {% else %}
-                <li class="{{ 'active' if request.endpoint == 'login' }}"><a href="{{ url_for('login', next=request.path) }}">Login</a></li>
+                <li><a href="/dodgeball/login">Login</a></li>
             {% endif %}
         </ul>
     </nav>
